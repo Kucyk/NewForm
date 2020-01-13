@@ -1,6 +1,6 @@
 import MUIDataTable from "mui-datatables";
 import React, { Fragment } from "react";
-import TableToolbar from "../../components/CustomerList/TableToolbar/TableToolbar";
+import TableToolbar from "./TableToolbar/TableToolbar";
 // import TableFooter from '../../components/CustomerList/TableFooter/TableFooter'
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 // import { purple, amber } from "@material-ui/core/colors/";
@@ -12,12 +12,6 @@ const RespTable = ({ rows, handleDelete, classes }) => {
   theme = () =>
     createMuiTheme({
       palette: {
-        // primary: purple,
-        // secondary: {
-        //   main: amber[500],
-        //   light: amber[200],
-        //   dark: amber[700]
-        // },
         type: "dark"
       },
       overrides: {
@@ -25,20 +19,10 @@ const RespTable = ({ rows, handleDelete, classes }) => {
           root: {
             fontSize: 10,
             maxWidth: 250
-          },
-          paper: {
-            // boxShadow: "none"
-            // backgroundColor: "#424242",
-            // fontSize:5
           }
         },
         MUIDataTableHeadCell: {
           root: {
-            // width: '100%',
-            // maxWidth: '100%',
-            // padding:0,
-            // margin:0,
-            // backgroundColor: "#FF0000",
             fontSize: 8,
             padding: "10px 5px",
             textAlign: "center"
@@ -82,27 +66,14 @@ const RespTable = ({ rows, handleDelete, classes }) => {
       />
     ),
     filter: true,
-    // selectableRows: true,
     displayRowCheckbox: true,
     displaySelectAll: true,
     adjustForCheckbox: false,
-    rowsPerPage: 6, //!!!!!!!!!!!!!!
-    // filterType: "dropdown",
-    // pagination:false,
+    rowsPerPage: 6,
     selectableRowsOnClick: false,
     disableToolbarSelect: false,
-    // responsive:'', //!!!!!!!
-    rowsPerPageOptions: [6], //!!!!!!!
-    // selectableRows:'single',
-    // selectableRowsHeader:true,
-    // resizableColumns:true
-    // expandableRows:true
+    rowsPerPageOptions: [6],
     responsive: "scrollMaxHeight"
-    // pagination:true,
-    // resizableColumns: true,
-    // rowsPerPage: 7,
-    //isRowSelectable:false //!!!!!!!!!
-    //selectableRows: 'none' //!!!!!!!!!!!
   };
 
   const optionsOnSmallScreen = {
@@ -135,7 +106,7 @@ const RespTable = ({ rows, handleDelete, classes }) => {
           {matches.small && (
             <MuiThemeProvider theme={theme}>
               <MUIDataTable
-              style={{fontSize:10}}
+                style={{ fontSize: 10 }}
                 title={"Lista Uczestników"}
                 data={rows}
                 columns={columns}

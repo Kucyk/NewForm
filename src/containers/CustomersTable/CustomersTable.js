@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import withHandleError from "../../hoc/withHandleError/withHandleError";
 import withHandleLoading from "../../hoc/withHandleLoading/withHandleLoading";
-import RespTable from "./RespTable";
+import CustomersList from "../../components/CustomerList/CustomersList";
 
 const createRows = (
   firstName,
@@ -18,8 +18,8 @@ const createRows = (
   return [firstName, lastName, email, city, occupation, number, key];
 };
 
-const RespTableWithHandleErrorAndLoading = withHandleLoading(
-  withHandleError(RespTable)
+const CustomersListWithHandleErrorAndLoading = withHandleLoading(
+  withHandleError(CustomersList)
 );
 
 const CustomersTable = ({
@@ -64,7 +64,7 @@ const CustomersTable = ({
 
   return (
     <Fragment>
-      <RespTableWithHandleErrorAndLoading
+      <CustomersListWithHandleErrorAndLoading
         handleDelete={handleDelete}
         rows={rows}
         error={error}
