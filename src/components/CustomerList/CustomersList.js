@@ -1,10 +1,7 @@
 import MUIDataTable from "mui-datatables";
 import React, { Fragment } from "react";
 import TableToolbar from "./TableToolbar/TableToolbar";
-// import TableFooter from '../../components/CustomerList/TableFooter/TableFooter'
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-// import { purple, amber } from "@material-ui/core/colors/";
-// import { withStyles } from "@material-ui/core/styles";
 import Media from "react-media";
 
 const RespTable = ({ rows, handleDelete, classes }) => {

@@ -40,7 +40,6 @@ const CustomersTable = ({
   if (customers) {
     rows = [];
 
-
     Object.keys(customers).map((key, index) =>
       rows.push(
         createRows(

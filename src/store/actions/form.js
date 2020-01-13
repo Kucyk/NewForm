@@ -86,12 +86,10 @@ export const deleteCustomer = (id, token) => {
     axios
       .delete(`/people/${id}.json`)
       .then(response => {
-        console.log("delete prawidlowo");
         dispatch(deleteCustomerSuccess());
         dispatch(fetchCustomers(token));
       })
       .catch(err => {
-        console.log("delete zle");
         dispatch(deleteCustomerFail(err));
       });
   };

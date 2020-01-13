@@ -2,8 +2,6 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { TextField } from "@material-ui/core";
 
-// The `withStyles()` higher-order component is injecting a `classes`
-// prop that is used by the `Button` component.
 const styles = theme => ({
   root: {
     [theme.breakpoints.up("md")]: {
