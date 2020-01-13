@@ -3,7 +3,9 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-const TableToolbar = ({ rows, selectedRows, classes, handleDelete }) => {
+import PropTypes from "prop-types";
+
+const TableToolbar = ({ rows, selectedRows, handleDelete }) => {
   const handleClick = () => {
     let itemsIndexes;
     let ids;
@@ -17,7 +19,7 @@ const TableToolbar = ({ rows, selectedRows, classes, handleDelete }) => {
   };
 
   return (
-    <div className={"custom-toolbar-select"}>
+    <div data-test='tableToolbarComponent' className={"custom-toolbar-select"}>
       <Tooltip title={"Delete"}>
         <IconButton onClick={handleClick}>
           <DeleteIcon/>
@@ -26,5 +28,12 @@ const TableToolbar = ({ rows, selectedRows, classes, handleDelete }) => {
     </div>
   );
 };
+
+TableToolbar.propTypes={
+  rows: PropTypes.array,
+  handleDelete: PropTypes.func,
+  selectedRows:PropTypes.object
+}
+
 
 export default TableToolbar;

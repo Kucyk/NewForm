@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import FormButton from "../../../UI/FormButton/FormButton";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 
+import PropTypes from "prop-types";
+
 const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {
   const convertToLabel = text => {
     switch (text) {
@@ -57,6 +59,14 @@ const styles = {
     borderRadius: "3px",
     color: "red"
   }
+};
+
+Confirm.propTypes = {
+  prevStep: PropTypes.func,
+  touched: PropTypes.object,
+  errors: PropTypes.object,
+  values: PropTypes.object,
+  isSubmitting: PropTypes.bool
 };
 
 export default Confirm;

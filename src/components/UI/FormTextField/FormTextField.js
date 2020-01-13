@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { TextField } from "@material-ui/core";
 
+import PropTypes from "prop-types";
+
 const styles = theme => ({
   root: {
     [theme.breakpoints.up("md")]: {
@@ -46,3 +48,14 @@ export default function ClassesShorthand({
     />
   );
 }
+
+ClassesShorthand.propTypes = {
+  defaultValue:PropTypes.string,
+  onChange:PropTypes.func,
+  onBlur:PropTypes.func,
+  helperText:PropTypes.string,
+  label:PropTypes.string,
+  name:PropTypes.string,
+  error:PropTypes.bool,
+  type:PropTypes.string
+};

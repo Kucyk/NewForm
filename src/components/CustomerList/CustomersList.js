@@ -4,7 +4,9 @@ import TableToolbar from "./TableToolbar/TableToolbar";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import Media from "react-media";
 
-const RespTable = ({ rows, handleDelete, classes }) => {
+import PropTypes from "prop-types";
+
+const CustomersList = ({ rows, handleDelete }) => {
   let theme = null;
   theme = () =>
     createMuiTheme({
@@ -125,4 +127,9 @@ const RespTable = ({ rows, handleDelete, classes }) => {
   );
 };
 
-export default RespTable;
+CustomersList.propTypes={
+  rows:PropTypes.array, 
+  handleDelete:PropTypes.func
+}
+
+export default CustomersList;

@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
+import PropTypes from "prop-types";
+
 const styles = theme => ({
   root: {
     margin: "40px 20px",
@@ -19,17 +21,24 @@ const styles = theme => ({
 
 const FormButton = withStyles(styles)(Button);
 
-export default function ClassesShorthand(props) {
+export default function ClassesShorthand({type,isSubmitting,onClick,children}) {
   return (
     <FormButton
       data-test="formButtonComponent"
-      type={props.type}
-      disabled={props.isSubmitting}
+      type={type}
+      disabled={isSubmitting}
       variant="outlined"
       color="primary"
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      {props.children}
+      {children}
     </FormButton>
   );
 }
+
+ClassesShorthand.propTypes = {
+  type:PropTypes.string,
+  isSubmitting:PropTypes.bool,
+  onClick:PropTypes.func,
+};
+

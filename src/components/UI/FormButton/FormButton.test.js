@@ -1,12 +1,25 @@
 import React from "react";
 import { shallow } from "enzyme";
 import FormButton from "./FormButton";
-import { findByTestAttr } from "../../../Utils/index";
+import { findByTestAttr,checkProps } from "../../../Utils/index";
 
 const setUp = (props = {}) => {
   const component = shallow(<FormButton {...props} />);
   return component;
 };
+
+describe("Checking PropTypes", () => {
+  it("Should not throw a warning", () => {
+    const expectedProps = {
+      type:'Test text 1',
+      isSubmitting:true,
+      onClick:()=>{},
+      // children:<React.Fragment/>
+    };
+    const propsErr = checkProps(FormButton, expectedProps);
+    expect(propsErr).toBeUndefined();
+  });
+});
 
 describe("FormButton Component", () => {
   let component;

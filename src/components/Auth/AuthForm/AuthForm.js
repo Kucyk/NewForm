@@ -4,7 +4,9 @@ import { validationSchema } from "../../../validationSchemas/authValidation/auth
 import { TextField } from "@material-ui/core";
 import FormButton from "../../UI/FormButton/FormButton";
 
-const AuthForm = ({ isSignIn, onAuth, handleToggle }) => {
+import PropTypes from "prop-types";
+
+const AuthForm = ({ isSignIn, onAuth }) => {
   const handleSubmit = customData => (values, { setSubmitting, resetForm }) => {
     onAuth(values.email, values.password, customData);
     setSubmitting(true);
@@ -16,6 +18,7 @@ const AuthForm = ({ isSignIn, onAuth, handleToggle }) => {
 
   return (
     <Formik
+      data-test="authFormComponent"
       initialValues={{
         email: "",
         password: ""
@@ -73,6 +76,11 @@ const AuthForm = ({ isSignIn, onAuth, handleToggle }) => {
       )}
     </Formik>
   );
+};
+
+AuthForm.propTypes = {
+  isSignIn: PropTypes.bool,
+  onAuth: PropTypes.func
 };
 
 export default AuthForm;

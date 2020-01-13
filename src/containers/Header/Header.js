@@ -3,6 +3,8 @@ import { AppBar, Toolbar, Typography } from "@material-ui/core/";
 import Auth from "../../components/Auth/Auth";
 import { withStyles } from "@material-ui/styles";
 
+import PropTypes from "prop-types";
+
 const styles = {
   flex: {
     flex: 1
@@ -20,5 +22,9 @@ const Header = withStyles(styles)(({ classes }) => {
     </AppBar>
   );
 });
+
+Header.propTypes = {
+  classes: PropTypes.object,
+};
 
 export default Header;
