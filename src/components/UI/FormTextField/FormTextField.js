@@ -33,6 +33,7 @@ export default function ClassesShorthand({
 }) {
   return (
     <FormTextField
+      data-test="formTextFieldComponent"
       error={error}
       helperText={helperText}
       label={label}

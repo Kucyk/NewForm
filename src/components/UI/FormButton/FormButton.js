@@ -22,6 +22,7 @@ const FormButton = withStyles(styles)(Button);
 export default function ClassesShorthand(props) {
   return (
     <FormButton
+      data-test="formButtonComponent"
       type={props.type}
       disabled={props.isSubmitting}
       variant="outlined"
