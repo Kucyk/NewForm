@@ -81,8 +81,8 @@ const CustomersList = ({ rows, handleDelete }) => {
     rowsPerPage: 8
   };
 
-  const xsmall = useMediaQuery('(max-width:425px)');
-  const small = useMediaQuery('(min-width: 426px) and (max-width: 699px)');
+  const xsmall = useMediaQuery('(max-width:374px)');
+  const small = useMediaQuery('(min-width: 375px) and (max-width: 699px)');
   const large = useMediaQuery('(min-width:700px)');
   return (
         <Fragment>
@@ -99,7 +99,6 @@ const CustomersList = ({ rows, handleDelete }) => {
           {small && (
             <MuiThemeProvider theme={theme}>
               <MUIDataTable
-                style={{ fontSize: 10 }}
                 title={"Lista Uczestników"}
                 data={rows}
                 columns={columns}
