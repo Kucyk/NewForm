@@ -6,6 +6,7 @@ import LoginInfo from "./components/Auth/LoginInfo/LoginInfo";
 import { Switch, Route, Redirect } from "react-router-dom";
 import CustomersTable from "./containers/CustomersTable/CustomersTable";
 import CustomerForm from "./containers/CustomerForm/CustomerForm";
+import PropTypes from "prop-types";
 
 const App = ({ onTryAutoSignUp, isAuthenticated }) => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const App = ({ onTryAutoSignUp, isAuthenticated }) => {
   }, [onTryAutoSignUp]);
 
   return (
-    <Layout isAuthenticated={isAuthenticated}>
+    <Layout isAuthenticated={isAuthenticated} data-test="appComponent">
       {isAuthenticated ? (
         <Switch>
           <Route path="/form" component={CustomerForm} />
@@ -27,6 +28,11 @@ const App = ({ onTryAutoSignUp, isAuthenticated }) => {
       )}
     </Layout>
   );
+};
+
+App.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  onTryAutoSignUp: PropTypes.func
 };
 
 const mapStateToProps = state => {

@@ -44,7 +44,6 @@ const Footer = ({ history, isAuthenticated }) => {
     : null;
 
   return (
-    <div>
       <AppBar position="static">
         <Tabs
           value={index}
@@ -56,7 +55,6 @@ const Footer = ({ history, isAuthenticated }) => {
           {content}
         </Tabs>
       </AppBar>
-    </div>
   );
 };
 

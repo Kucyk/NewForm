@@ -11,7 +11,7 @@ const styles = {
 };
 const Header = withStyles(styles)(({ classes }) => {
   return (
-    <AppBar data-test="appBarComponent" position="static">
+    <AppBar data-test="headerComponent" position="static">
       <Toolbar>
         <Typography variant="h5" color="inherit" className={classes.flex}>
           Formularz Uczestników

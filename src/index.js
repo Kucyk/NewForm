@@ -2,22 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import thunk from "redux-thunk";
+// import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
+// import { createStore, applyMiddleware, compose } from "redux";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
 import { purple, amber } from "@material-ui/core/colors/";
 import { Router } from "react-router-dom";
-import rootReducer from './store/reducers/index'
+// import rootReducer from './store/reducers/index'
 import history from "./history";
+import {store} from './createStore'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+/////////////////////////
+// export const middlewares=[thunk]
+// export const createStoreWithMiddleware=applyMiddleware(...middlewares)(createStore)
+// export const store=createStoreWithMiddleware(rootReducer)
 
-export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+/////////////////////////
 
+
+
+// export const store = createStore(
+//   rootReducer,
+//   composeEnhancers(applyMiddleware(thunk))
+// );
 const theme = createMuiTheme({
   palette: {
     primary: purple,

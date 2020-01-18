@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
 import withHandleError from "../../hoc/withHandleError/withHandleError";
@@ -61,15 +61,12 @@ const CustomersTable = ({
   };
 
   return (
-    <Fragment>
-      {console.log(customers)}
-      <CustomersListWithHandleErrorAndLoading
-        handleDelete={handleDelete}
-        rows={rows}
-        error={error}
-        loading={loading}
-      />
-    </Fragment>
+    <CustomersListWithHandleErrorAndLoading
+      handleDelete={handleDelete}
+      rows={rows}
+      error={error}
+      loading={loading}
+    />
   );
 };
 
