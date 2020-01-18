@@ -2,9 +2,8 @@ import React from "react";
 import FormUserDetails from "./FormUserDetails/FormUserDetails";
 import Confirm from "./Confirm/Confirm";
 import Success from "./Success/Success";
-import withHandleError from "../../../hoc/withHandleError/withHandleError";
-import withHandleLoading from "../../../hoc/withHandleLoading/withHandleLoading";
-
+import withHandleError from "../../hoc/withHandleError/withHandleError";
+import withHandleLoading from "../../hoc/withHandleLoading/withHandleLoading";
 import PropTypes from "prop-types";
 
 const SuccessWithHandleErrorAndLoading = withHandleLoading(
@@ -62,21 +61,19 @@ const UserForm = ({
   }
 };
 
-
-UserForm.propTypes={
-  values:PropTypes.object,
-  errors:PropTypes.object,
-  touched:PropTypes.object,
-  handleChange:PropTypes.func,
-  handleBlur:PropTypes.func,
-  isSubmitting:PropTypes.bool,
-  step:PropTypes.number,
-  nextStep:PropTypes.func,
-  prevStep:PropTypes.func,
-  firstStep:PropTypes.func,
-  loading:PropTypes.bool,
-  error:PropTypes.bool
-}
-
+UserForm.propTypes = {
+  values: PropTypes.object,
+  errors: PropTypes.object,
+  touched: PropTypes.object,
+  handleChange: PropTypes.func,
+  handleBlur: PropTypes.func,
+  isSubmitting: PropTypes.bool,
+  step: PropTypes.number,
+  nextStep: PropTypes.func,
+  prevStep: PropTypes.func,
+  firstStep: PropTypes.func,
+  loading: PropTypes.bool,
+  error: PropTypes.bool
+};
 
 export default UserForm;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-
 import PropTypes from "prop-types";
 
 const LogInformation = ({ text }) => {
@@ -12,7 +11,7 @@ const LogInformation = ({ text }) => {
 };
 
 LogInformation.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.string
 };
 
 export default LogInformation;

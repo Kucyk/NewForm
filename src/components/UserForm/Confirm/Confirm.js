@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
-import FormButton from "../../../UI/FormButton/FormButton";
+import FormButton from "../../UI/FormButton/FormButton";
 import { List, ListItem, ListItemText } from "@material-ui/core";
-
 import PropTypes from "prop-types";
 
 const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {

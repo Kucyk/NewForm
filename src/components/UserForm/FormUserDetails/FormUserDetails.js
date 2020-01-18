@@ -1,7 +1,6 @@
 import React from "react";
-import FormTextField from "../../../UI/FormTextField/FormTextField";
-import FormButton from "../../../UI/FormButton/FormButton";
-
+import FormTextField from "../../UI/FormTextField/FormTextField";
+import FormButton from "../../UI/FormButton/FormButton";
 import PropTypes from "prop-types";
 
 const FormUserDetails = ({
@@ -86,13 +85,13 @@ const FormUserDetails = ({
   );
 };
 
-FormUserDetails.propTypes={
-  values:PropTypes.object,
-  errors:PropTypes.object,
-  touched:PropTypes.object,
-  handleChange:PropTypes.func,
-  handleBlur:PropTypes.func,
-  nextStep:PropTypes.func
-}
+FormUserDetails.propTypes = {
+  values: PropTypes.object,
+  errors: PropTypes.object,
+  touched: PropTypes.object,
+  handleChange: PropTypes.func,
+  handleBlur: PropTypes.func,
+  nextStep: PropTypes.func
+};
 
 export default FormUserDetails;

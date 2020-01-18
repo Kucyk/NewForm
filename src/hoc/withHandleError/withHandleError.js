@@ -1,6 +1,5 @@
 import React from "react";
 import AppInfo from "../../components/UI/AppInfo/AppInfo";
-
 import PropTypes from "prop-types";
 
 export default WrappedComponent => {
@@ -12,10 +11,9 @@ export default WrappedComponent => {
     return <WrappedComponent {...props} />;
   };
 
-
   hocComponent.propTypes = {
     error: PropTypes.bool,
-    props: PropTypes.any,
+    props: PropTypes.any
   };
 
   return hocComponent;

@@ -14,14 +14,19 @@ const styles = theme => ({
       width: 200
     },
     [theme.breakpoints.down("xs")]: {
-      width: 100
+      maxWidth: 100
     }
   }
 });
 
 const FormButton = withStyles(styles)(Button);
 
-export default function ClassesShorthand({type,isSubmitting,onClick,children}) {
+export default function ClassesShorthand({
+  type,
+  isSubmitting,
+  onClick,
+  children
+}) {
   return (
     <FormButton
       data-test="formButtonComponent"
@@ -37,8 +42,7 @@ export default function ClassesShorthand({type,isSubmitting,onClick,children}) {
 }
 
 ClassesShorthand.propTypes = {
-  type:PropTypes.string,
-  isSubmitting:PropTypes.bool,
-  onClick:PropTypes.func,
+  type: PropTypes.string,
+  isSubmitting: PropTypes.bool,
+  onClick: PropTypes.func
 };
-

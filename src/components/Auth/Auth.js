@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Dialog, DialogTitle, Fab, Tabs, Tab } from "@material-ui/core";
-import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import AuthForm from "./AuthForm/AuthForm";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 import history from "../../history";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import VpnKeyRoundedIcon from "@material-ui/icons/VpnKeyRounded";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import AuthForm from "./AuthForm/AuthForm";
 
 const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
   const [open, setOpen] = useState(false);

@@ -25,7 +25,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        error: action.error
       };
     case actionTypes.FETCH_CUSTOMERS_START:
       return {

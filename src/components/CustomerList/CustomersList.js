@@ -1,9 +1,8 @@
 import MUIDataTable from "mui-datatables";
 import React, { Fragment } from "react";
-import TableToolbar from "./TableToolbar/TableToolbar";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import Media from "react-media";
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import TableToolbar from "./TableToolbar/TableToolbar";
 import PropTypes from "prop-types";
 
 const CustomersList = ({ rows, handleDelete }) => {
@@ -48,7 +47,7 @@ const CustomersList = ({ rows, handleDelete }) => {
         MUIDataTableBodyCell: {
           root: {
             padding: "15px 7px 15px 7px",
-            fontSize: 7
+            fontSize: 6
           }
         }
       }
@@ -82,17 +81,12 @@ const CustomersList = ({ rows, handleDelete }) => {
     rowsPerPage: 8
   };
 
+  const xsmall = useMediaQuery('(max-width:425px)');
+  const small = useMediaQuery('(min-width: 426px) and (max-width: 699px)');
+  const large = useMediaQuery('(min-width:700px)');
   return (
-    <Media
-      queries={{
-        xsmall: "(max-width: 425px)",
-        small: "(min-width: 426px) and (max-width: 699px)",
-        large: "(min-width: 700px)"
-      }}
-    >
-      {matches => (
         <Fragment>
-          {matches.xsmall && (
+          {xsmall && (
             <MuiThemeProvider theme={theme}>
               <MUIDataTable
                 title={"Lista Uczestników"}
@@ -102,7 +96,7 @@ const CustomersList = ({ rows, handleDelete }) => {
               />
             </MuiThemeProvider>
           )}
-          {matches.small && (
+          {small && (
             <MuiThemeProvider theme={theme}>
               <MUIDataTable
                 style={{ fontSize: 10 }}
@@ -113,7 +107,7 @@ const CustomersList = ({ rows, handleDelete }) => {
               />
             </MuiThemeProvider>
           )}
-          {matches.large && (
+          {large && (
             <MUIDataTable
               title={"Lista Uczestników"}
               data={rows}
@@ -122,8 +116,6 @@ const CustomersList = ({ rows, handleDelete }) => {
             />
           )}
         </Fragment>
-      )}
-    </Media>
   );
 };
 

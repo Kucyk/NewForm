@@ -4,22 +4,16 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import formReducer from "./store/reducers/form";
-import authReducer from "./store/reducers/auth";
+import { createStore, applyMiddleware, compose } from "redux";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
 import { purple, amber } from "@material-ui/core/colors/";
 import { Router } from "react-router-dom";
-import history from './history'
+import rootReducer from './store/reducers/index'
+import history from "./history";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const rootReducer = combineReducers({
-  form: formReducer,
-  auth: authReducer
-});
-
-const store = createStore(
+export const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
 );
@@ -41,7 +35,7 @@ ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <Provider store={store}>
       <Router history={history}>
-      <App />
+        <App />
       </Router>
     </Provider>
   </MuiThemeProvider>,
@@ -52,4 +46,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-

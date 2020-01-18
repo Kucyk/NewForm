@@ -23,7 +23,7 @@ const styles = theme => ({
 
 const FormTextField = withStyles(styles)(TextField);
 
-export default function ClassesShorthand({
+const TextInput = ({
   defaultValue,
   onChange,
   onBlur,
@@ -32,7 +32,7 @@ export default function ClassesShorthand({
   name,
   error,
   type
-}) {
+}) => {
   return (
     <FormTextField
       data-test="formTextFieldComponent"
@@ -47,15 +47,17 @@ export default function ClassesShorthand({
       color="primary"
     />
   );
-}
-
-ClassesShorthand.propTypes = {
-  defaultValue:PropTypes.string,
-  onChange:PropTypes.func,
-  onBlur:PropTypes.func,
-  helperText:PropTypes.string,
-  label:PropTypes.string,
-  name:PropTypes.string,
-  error:PropTypes.bool,
-  type:PropTypes.string
 };
+
+TextInput.propTypes = {
+  defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  helperText: PropTypes.string,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  error: PropTypes.bool,
+  type: PropTypes.string
+};
+
+export default TextInput;

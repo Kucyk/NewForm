@@ -4,7 +4,6 @@ import * as actions from "./store/actions/index";
 import Layout from "./Layout/Layout";
 import LoginInfo from "./components/Auth/LoginInfo/LoginInfo";
 import { Switch, Route, Redirect } from "react-router-dom";
-
 import CustomersTable from "./containers/CustomersTable/CustomersTable";
 import CustomerForm from "./containers/CustomerForm/CustomerForm";
 

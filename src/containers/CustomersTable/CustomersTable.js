@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
-
 import withHandleError from "../../hoc/withHandleError/withHandleError";
 import withHandleLoading from "../../hoc/withHandleLoading/withHandleLoading";
 import CustomersList from "../../components/CustomerList/CustomersList";
@@ -40,7 +39,7 @@ const CustomersTable = ({
   if (customers) {
     rows = [];
 
-    Object.keys(customers).map((key, index) =>
+    Object.keys(customers).map(key =>
       rows.push(
         createRows(
           customers[key].firstName,
@@ -63,6 +62,7 @@ const CustomersTable = ({
 
   return (
     <Fragment>
+      {console.log(customers)}
       <CustomersListWithHandleErrorAndLoading
         handleDelete={handleDelete}
         rows={rows}
