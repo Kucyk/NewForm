@@ -1,7 +1,7 @@
 import MUIDataTable from "mui-datatables";
 import React, { Fragment } from "react";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import TableToolbar from "./TableToolbar/TableToolbar";
 import PropTypes from "prop-types";
 
@@ -53,7 +53,7 @@ const CustomersList = ({ rows, handleDelete }) => {
       }
     });
 
-  const columns = ["Imię", "Nazwisko", "Email", "Miasto", "Zawód", "Numer"];
+  const columns = ["Imię", "Nazwisko", "Email", "Miasto", "Numer"];
 
   const options = {
     customToolbarSelect: selectedRows => (
@@ -81,46 +81,46 @@ const CustomersList = ({ rows, handleDelete }) => {
     rowsPerPage: 8
   };
 
-  const xsmall = useMediaQuery('(max-width:374px)');
-  const small = useMediaQuery('(min-width: 375px) and (max-width: 699px)');
-  const large = useMediaQuery('(min-width:700px)');
+  const xsmall = useMediaQuery("(max-width:374px)");
+  const small = useMediaQuery("(min-width: 375px) and (max-width: 699px)");
+  const large = useMediaQuery("(min-width:700px)");
   return (
-        <Fragment>
-          {xsmall && (
-            <MuiThemeProvider theme={theme}>
-              <MUIDataTable
-                title={"Lista Uczestników"}
-                data={rows}
-                columns={columns}
-                options={optionsOnSmallScreen}
-              />
-            </MuiThemeProvider>
-          )}
-          {small && (
-            <MuiThemeProvider theme={theme}>
-              <MUIDataTable
-                title={"Lista Uczestników"}
-                data={rows}
-                columns={columns}
-                options={options}
-              />
-            </MuiThemeProvider>
-          )}
-          {large && (
-            <MUIDataTable
-              title={"Lista Uczestników"}
-              data={rows}
-              columns={columns}
-              options={options}
-            />
-          )}
-        </Fragment>
+    <Fragment>
+      {xsmall && (
+        <MuiThemeProvider theme={theme}>
+          <MUIDataTable
+            title={"Lista Uczestników"}
+            data={rows}
+            columns={columns}
+            options={optionsOnSmallScreen}
+          />
+        </MuiThemeProvider>
+      )}
+      {small && (
+        <MuiThemeProvider theme={theme}>
+          <MUIDataTable
+            title={"Lista Uczestników"}
+            data={rows}
+            columns={columns}
+            options={options}
+          />
+        </MuiThemeProvider>
+      )}
+      {large && (
+        <MUIDataTable
+          title={"Lista Uczestników"}
+          data={rows}
+          columns={columns}
+          options={options}
+        />
+      )}
+    </Fragment>
   );
 };
 
-CustomersList.propTypes={
-  rows:PropTypes.array, 
-  handleDelete:PropTypes.func
-}
+CustomersList.propTypes = {
+  rows: PropTypes.array,
+  handleDelete: PropTypes.func
+};
 
 export default CustomersList;

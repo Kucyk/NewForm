@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const styles = theme => ({
   root: {
-    margin: "40px 20px",
+    margin: "40px 10px",
     [theme.breakpoints.up("md")]: {
       width: 300
     },
@@ -21,7 +21,7 @@ const styles = theme => ({
 
 const FormButton = withStyles(styles)(Button);
 
-export default function ClassesShorthand({
+export default function StyledButton({
   type,
   isSubmitting,
   onClick,
@@ -41,7 +41,7 @@ export default function ClassesShorthand({
   );
 }
 
-ClassesShorthand.propTypes = {
+StyledButton.propTypes = {
   type: PropTypes.string,
   isSubmitting: PropTypes.bool,
   onClick: PropTypes.func

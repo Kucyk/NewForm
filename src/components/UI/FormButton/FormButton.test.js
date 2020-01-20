@@ -14,7 +14,6 @@ describe("Checking PropTypes", () => {
       type:'Test text 1',
       isSubmitting:true,
       onClick:()=>{},
-      // children:<React.Fragment/>
     };
     const propsErr = checkProps(FormButton, expectedProps);
     expect(propsErr).toBeUndefined();

@@ -12,8 +12,7 @@ const TableToolbar = ({ rows, selectedRows, handleDelete }) => {
     itemsIndexes = selectedRows.data.map(item => {
       return item.index;
     });
-    ids = itemsIndexes.map(index => rows[index][6]);
-
+    ids = itemsIndexes.map(index => rows[index][5]);
     handleDelete(ids);
   };
 

@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import UserForm from "../../components/UserForm/UserForm";
 import { validationSchema } from "../../validationSchemas/formValidation/formValidation";
 
-const CustomerForm = props => {
+const CustomerForm = ({ loading, error, onPostData }) => {
   const [step, setStep] = useState(1);
 
   //Proceed to next step
@@ -23,15 +23,12 @@ const CustomerForm = props => {
     setStep(1);
   };
 
-  const { loading, error, onPostData } = props;
-
   return (
     <Formik
       initialValues={{
         firstName: "",
         lastName: "",
         email: "",
-        occupation: "",
         city: "",
         number: ""
       }}

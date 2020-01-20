@@ -5,16 +5,8 @@ import withHandleError from "../../hoc/withHandleError/withHandleError";
 import withHandleLoading from "../../hoc/withHandleLoading/withHandleLoading";
 import CustomersList from "../../components/CustomerList/CustomersList";
 
-const createRows = (
-  firstName,
-  lastName,
-  email,
-  city,
-  occupation,
-  number,
-  key
-) => {
-  return [firstName, lastName, email, city, occupation, number, key];
+const createRows = (firstName, lastName, email, city, number, key) => {
+  return [firstName, lastName, email, city, number, key];
 };
 
 const CustomersListWithHandleErrorAndLoading = withHandleLoading(
@@ -46,7 +38,6 @@ const CustomersTable = ({
           customers[key].lastName,
           customers[key].email,
           customers[key].city,
-          customers[key].occupation,
           customers[key].number,
           key
         )

@@ -1,11 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 import FormButton from "../../UI/FormButton/FormButton";
 import { Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
+import StyledPaper from "../../UI/StyledPaper/StyledPaper";
 
 const Success = ({ firstStep }) => {
   return (
-    <Fragment>
+    <StyledPaper>
       <Typography
         data-test="successComponent"
         variant="h5"
@@ -15,7 +16,7 @@ const Success = ({ firstStep }) => {
         DZIEKUJEMY ZA DODANIE OSOBY!
       </Typography>
       <FormButton onClick={firstStep}>Dodaj Kolejną osobę !</FormButton>
-    </Fragment>
+    </StyledPaper>
   );
 };
 

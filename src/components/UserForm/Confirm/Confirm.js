@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import FormButton from "../../UI/FormButton/FormButton";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import PropTypes from "prop-types";
+import StyledPaper from "../../UI/StyledPaper/StyledPaper";
 
 const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {
   const convertToLabel = text => {
@@ -12,8 +13,6 @@ const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {
         return "Nazwisko";
       case "email":
         return "Email";
-      case "occupation":
-        return "Zawód";
       case "city":
         return "Miasto";
       case "number":
@@ -24,7 +23,7 @@ const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {
   };
 
   return (
-    <Fragment>
+    <StyledPaper>
       <List component="nav">
         {Object.keys(values).map(value => (
           <ListItem button key={value}>
@@ -44,7 +43,7 @@ const Confirm = ({ prevStep, isSubmitting, values, errors, touched }) => {
       <FormButton type="submit" disabled={isSubmitting}>
         Wyślij
       </FormButton>
-    </Fragment>
+    </StyledPaper>
   );
 };
 

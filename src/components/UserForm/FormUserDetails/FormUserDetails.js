@@ -2,6 +2,7 @@ import React from "react";
 import FormTextField from "../../UI/FormTextField/FormTextField";
 import FormButton from "../../UI/FormButton/FormButton";
 import PropTypes from "prop-types";
+import StyledPaper from '../../UI/StyledPaper/StyledPaper'
 
 const FormUserDetails = ({
   values,
@@ -12,7 +13,7 @@ const FormUserDetails = ({
   nextStep
 }) => {
   return (
-    <div>
+    <StyledPaper>
       <FormTextField
         error={errors.firstName && touched.firstName}
         label="Imię"
@@ -49,18 +50,6 @@ const FormUserDetails = ({
       />
       <br />
       <FormTextField
-        error={errors.occupation && touched.occupation}
-        helperText={
-          errors.occupation && touched.occupation ? errors.occupation : null
-        }
-        label="Zawód"
-        name="occupation"
-        defaultValue={values.occupation}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      <br />
-      <FormTextField
         error={errors.city && touched.city}
         helperText={errors.city && touched.city ? errors.city : null}
         label="Miasto"
@@ -81,7 +70,7 @@ const FormUserDetails = ({
       />
       <br />
       <FormButton onClick={nextStep}>Dalej</FormButton>
-    </div>
+    </StyledPaper>
   );
 };
 
