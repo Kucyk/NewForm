@@ -31,7 +31,7 @@ describe("FormTextField Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render FormTextField Component without errors", () => {
     const wrapper = findByTestAttr(component, "formTextFieldComponent");
     expect(wrapper.length).toBe(1);
   });

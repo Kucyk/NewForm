@@ -37,6 +37,15 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
     onLogout();
   };
 
+  const handleSubmit = customData => (values, { setSubmitting, resetForm }) => {
+    onAuth(values.email, values.password, customData);
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      resetForm();
+    }, 500);
+  };
+
   if (loading) {
     errorMessage = <CircularProgress />;
   }
@@ -63,8 +72,8 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
 
   let form = (
     <AuthForm
+      handleSubmit={handleSubmit}
       handleToggle={handleToggle}
-      onAuth={onAuth}
       isSignIn={isSignIn}
       switchModeHandler={switchModeHandler}
     />
@@ -116,22 +125,18 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    token: state.auth.token,
-    userId: state.auth.userId,
-    error: state.auth.error,
-    loading: state.auth.loading,
-    isAuthenticated: state.auth.token !== null
-  };
-};
+const mapStateToProps = state => ({
+  token: state.auth.token,
+  userId: state.auth.userId,
+  error: state.auth.error,
+  loading: state.auth.loading,
+  isAuthenticated: state.auth.token !== null
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onLogout: () => dispatch(actions.logout()),
-    onAuth: (email, password, isSignIn) =>
-      dispatch(actions.auth(email, password, isSignIn))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  onLogout: () => dispatch(actions.logout()),
+  onAuth: (email, password, isSignIn) =>
+    dispatch(actions.auth(email, password, isSignIn))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

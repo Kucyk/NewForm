@@ -26,7 +26,7 @@ describe("FormButton Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render FormButton Component without errors", () => {
     const wrapper = findByTestAttr(component, "formButtonComponent");
     expect(wrapper.length).toBe(1);
   });

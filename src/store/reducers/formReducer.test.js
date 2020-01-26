@@ -38,12 +38,7 @@ describe("Form Reducer Fetch Customers", () => {
     }
   ];
 
-  it("Should return default state", () => {
-    const newState = formReducer(undefined, {});
-    expect(newState).toEqual(initialState);
-  });
-
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type FETCH_CUSTOMERS_START", () => {
     const state = {
       ...initialState,
       loading: true
@@ -56,7 +51,7 @@ describe("Form Reducer Fetch Customers", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type FETCH_CUSTOMERS_SUCCESS", () => {
     const state = {
       ...initialState,
       customers
@@ -69,7 +64,7 @@ describe("Form Reducer Fetch Customers", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type FETCH_CUSTOMERS_FAIL", () => {
     const state = {
       ...initialState,
       error
@@ -93,7 +88,7 @@ describe("Form Reducer Post Data", () => {
 
   const error = "error";
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type POST_DATA_START", () => {
     const state = {
       ...initialState,
       loading: true
@@ -106,7 +101,7 @@ describe("Form Reducer Post Data", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type POST_DATA_SUCCESS", () => {
     const state = {
       ...initialState
     };
@@ -117,7 +112,7 @@ describe("Form Reducer Post Data", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type POST_DATA_FAIL", () => {
     const state = {
       ...initialState,
       error
@@ -141,7 +136,7 @@ describe("Form Reducer Delete Customer", () => {
 
   const error = "error";
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type DELETE_CUSTOMER_START", () => {
     const state = {
       ...initialState,
       loading: true
@@ -154,7 +149,7 @@ describe("Form Reducer Delete Customer", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type DELETE_CUSTOMER_SUCCESS", () => {
     const state = {
       ...initialState
     };
@@ -165,7 +160,7 @@ describe("Form Reducer Delete Customer", () => {
     expect(newState).toEqual(state);
   });
 
-  it("Should return new state if recieving type", () => {
+  it("Should return new state if recieving type DELETE_CUSTOMER_FAIL", () => {
     const state = {
       ...initialState,
       error

@@ -57,11 +57,7 @@ const CustomersList = ({ rows, handleDelete }) => {
 
   const options = {
     customToolbarSelect: selectedRows => (
-      <TableToolbar
-        selectedRows={selectedRows}
-        rows={rows}
-        handleDelete={handleDelete}
-      />
+      <TableToolbar selectedRows={selectedRows} handleClick={handleClick} />
     ),
     filter: true,
     displayRowCheckbox: true,
@@ -84,6 +80,17 @@ const CustomersList = ({ rows, handleDelete }) => {
   const xsmall = useMediaQuery("(max-width:374px)");
   const small = useMediaQuery("(min-width: 375px) and (max-width: 699px)");
   const large = useMediaQuery("(min-width:700px)");
+
+  const handleClick = selectedRows => {
+    let itemsIndexes;
+    let ids;
+    itemsIndexes = selectedRows.data.map(item => {
+      return item.index;
+    });
+    ids = itemsIndexes.map(index => rows[index][5]);
+    handleDelete(ids);
+  };
+
   return (
     <Fragment>
       {xsmall && (

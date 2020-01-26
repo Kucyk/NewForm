@@ -14,29 +14,26 @@ const styles = {
     justifyContent: "space-between"
   },
   typography: {
-    // flex: 1
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
   }
 };
-const Header = withStyles(styles)(({ classes }) => {
-  return (
-    <AppBar data-test="headerComponent" position="static">
-      <Toolbar className={classes.toolbar}>
-        <Typography variant="h5" color="inherit" className={classes.typography}>
-          <Lottie
-            height={50}
-            width={50}
-            options={getDefaultAnimationOptions(fingerprint, false)}
-          />
-          {"\u00A0"} <strong>Formularz</strong>
-        </Typography>
-        <Auth />
-      </Toolbar>
-    </AppBar>
-  );
-});
+const Header = withStyles(styles)(({ classes }) => (
+  <AppBar data-test="headerComponent" position="static">
+    <Toolbar className={classes.toolbar}>
+      <Typography variant="h5" color="inherit" className={classes.typography}>
+        <Lottie
+          height={50}
+          width={50}
+          options={getDefaultAnimationOptions(fingerprint, false)}
+        />
+        {"\u00A0"} <strong>Formularz</strong>
+      </Typography>
+      <Auth />
+    </Toolbar>
+  </AppBar>
+));
 
 Header.propTypes = {
   classes: PropTypes.object

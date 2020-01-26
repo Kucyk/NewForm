@@ -14,7 +14,7 @@ describe("LoginInfo Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render LoginInfo Component without errors", () => {
     const wrapper = findByTestAttr(component, "LoginInfoComponent");
     expect(wrapper.length).toBe(1);
   });

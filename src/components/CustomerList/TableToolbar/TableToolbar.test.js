@@ -26,7 +26,7 @@ describe("TableToolbar Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render TableToolbar Component without errors", () => {
     const wrapper = findByTestAttr(component, "tableToolbarComponent");
     expect(wrapper.length).toBe(1);
   });

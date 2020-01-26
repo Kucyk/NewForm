@@ -11,8 +11,7 @@ const FormUserDetails = ({
   handleChange,
   handleBlur,
   nextStep
-}) => {
-  return (
+}) =>(
     <StyledPaper>
       <FormTextField
         error={errors.firstName && touched.firstName}
@@ -71,8 +70,7 @@ const FormUserDetails = ({
       <br />
       <FormButton onClick={nextStep}>Dalej</FormButton>
     </StyledPaper>
-  );
-};
+  )
 
 FormUserDetails.propTypes = {
   values: PropTypes.object,

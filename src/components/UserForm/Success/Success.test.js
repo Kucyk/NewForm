@@ -24,7 +24,7 @@ describe("Success Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render Success Component without errors", () => {
     const wrapper = findByTestAttr(component, "successComponent");
     expect(wrapper.length).toBe(1);
   });

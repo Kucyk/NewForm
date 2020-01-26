@@ -4,7 +4,7 @@ import AuthForm from "./AuthForm";
 import { findByTestAttr,checkProps } from "../../../Utils/index";
 
 const setUp = (props = {}) => {
-  const component = shallow(<AuthForm {...props} />);
+  const component = shallow(<AuthForm handleSubmit={() => {}} {...props} />);
   return component;
 };
 
@@ -27,7 +27,7 @@ describe("AuthForm Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render AuthForm Component without errors", () => {
     const wrapper = findByTestAttr(component, "authFormComponent");
     expect(wrapper.length).toBe(1);
   });

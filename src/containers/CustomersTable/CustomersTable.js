@@ -5,9 +5,14 @@ import withHandleError from "../../hoc/withHandleError/withHandleError";
 import withHandleLoading from "../../hoc/withHandleLoading/withHandleLoading";
 import CustomersList from "../../components/CustomerList/CustomersList";
 
-const createRows = (firstName, lastName, email, city, number, key) => {
-  return [firstName, lastName, email, city, number, key];
-};
+const createRows = (firstName, lastName, email, city, number, key) => [
+  firstName,
+  lastName,
+  email,
+  city,
+  number,
+  key
+];
 
 const CustomersListWithHandleErrorAndLoading = withHandleLoading(
   withHandleError(CustomersList)
@@ -61,20 +66,16 @@ const CustomersTable = ({
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    token: state.auth.token,
-    customers: state.form.customers,
-    loading: state.form.loading,
-    error: state.form.error
-  };
-};
+const mapStateToProps = state => ({
+  token: state.auth.token,
+  customers: state.form.customers,
+  loading: state.form.loading,
+  error: state.form.error
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onFetchCustomers: token => dispatch(actions.fetchCustomers(token)),
-    onDeleteCustomer: (id, token) => dispatch(actions.deleteCustomer(id, token))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  onFetchCustomers: token => dispatch(actions.fetchCustomers(token)),
+  onDeleteCustomer: (id, token) => dispatch(actions.deleteCustomer(id, token))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomersTable);

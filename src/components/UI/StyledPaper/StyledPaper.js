@@ -10,8 +10,8 @@ const styles = theme => ({
 
 const StyledPaper = withStyles(styles)(Paper);
 
-const ClassesShorthand = ({ children }) => {
-  return <StyledPaper elevation={3}>{children}</StyledPaper>;
-};
+const ClassesShorthand = ({ children }) => (
+  <StyledPaper elevation={3}>{children}</StyledPaper>
+);
 
 export default ClassesShorthand;

@@ -30,8 +30,7 @@ const styles = theme => ({
   }
 });
 
-const Layout = ({ children, classes }) => {
-  return (
+const Layout = ({ children, classes }) => (
     <Fragment>
       <CssBaseline />
       <Header />
@@ -43,6 +42,5 @@ const Layout = ({ children, classes }) => {
       <Footer />
     </Fragment>
   );
-};
 
 export default withStyles(styles)(Layout);

@@ -8,17 +8,14 @@ import { validationSchema } from "../../validationSchemas/formValidation/formVal
 const CustomerForm = ({ loading, error, onPostData }) => {
   const [step, setStep] = useState(1);
 
-  //Proceed to next step
   const nextStep = () => {
     setStep(step + 1);
   };
 
-  //Proceed to previous step
   const prevStep = () => {
     setStep(step - 1);
   };
 
-  //go to beggining
   const firstStep = () => {
     setStep(1);
   };
@@ -73,18 +70,14 @@ const CustomerForm = ({ loading, error, onPostData }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    data: state.form.data,
-    error: state.form.error,
-    loading: state.form.loading
-  };
-};
+const mapStateToProps = state => ({
+  data: state.form.data,
+  error: state.form.error,
+  loading: state.form.loading
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onPostData: value => dispatch(actions.postData(value))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  onPostData: value => dispatch(actions.postData(value))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomerForm);

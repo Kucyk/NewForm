@@ -14,7 +14,7 @@ describe("Header Component", () => {
     wrapper = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render Header Component without errors", () => {
     const component = findByTestAttr(wrapper, "headerComponent");
     expect(component.length).toBe(1);
   });

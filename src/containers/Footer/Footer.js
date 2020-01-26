@@ -44,24 +44,22 @@ const Footer = ({ history, isAuthenticated }) => {
     : null;
 
   return (
-      <AppBar position="static">
-        <Tabs
-          value={index}
-          indicatorColor="secondary"
-          textColor="secondary"
-          centered
-          scrollButtons="on"
-        >
-          {content}
-        </Tabs>
-      </AppBar>
+    <AppBar position="static">
+      <Tabs
+        value={index}
+        indicatorColor="secondary"
+        textColor="secondary"
+        centered
+        scrollButtons="on"
+      >
+        {content}
+      </Tabs>
+    </AppBar>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isAuthenticated: state.auth.token !== null
-  };
-};
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.token !== null
+});
 
 export default connect(mapStateToProps)(withRouter(Footer));

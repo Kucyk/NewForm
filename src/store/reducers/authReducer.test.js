@@ -17,12 +17,7 @@ describe("Form Reducer Fetch Customers", () => {
 
     const userId= "Text 2"
   
-    it("Should return default state", () => {
-      const newState = authReducer(undefined, {});
-      expect(newState).toEqual(initialState);
-    });
-  
-    it("Should return new state if recieving type", () => {
+    it("Should return new state if recieving type AUTH_START", () => {
       const state = {
         ...initialState,
         loading: true
@@ -35,7 +30,7 @@ describe("Form Reducer Fetch Customers", () => {
       expect(newState).toEqual(state);
     });
 
-    it("Should return new state if recieving type", () => {
+    it("Should return new state if recieving type AUTH_SUCCESS", () => {
         const state = {
           ...initialState,
           token:idToken,
@@ -50,7 +45,7 @@ describe("Form Reducer Fetch Customers", () => {
         expect(newState).toEqual(state);
       });
 
-      it("Should return new state if recieving type", () => {
+      it("Should return new state if recieving type AUTH_FAIL", () => {
         const state = {
           ...initialState,
             error
@@ -63,7 +58,7 @@ describe("Form Reducer Fetch Customers", () => {
         expect(newState).toEqual(state);
       });
 
-      it("Should return new state if recieving type", () => {
+      it("Should return new state if recieving type AUTH_LOGOUT", () => {
         const newState = authReducer(undefined, {
           type: actions.AUTH_LOGOUT,
         });

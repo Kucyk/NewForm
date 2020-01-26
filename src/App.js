@@ -35,16 +35,12 @@ App.propTypes = {
   onTryAutoSignUp: PropTypes.func
 };
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = state => ({
     isAuthenticated: state.auth.token !== null
-  };
-};
+  })
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => ({
     onTryAutoSignUp: () => dispatch(actions.authCheckState())
-  };
-};
+  })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

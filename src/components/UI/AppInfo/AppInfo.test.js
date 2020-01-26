@@ -24,7 +24,7 @@ describe("AppInfo Component", () => {
     component = setUp();
   });
 
-  it("Should render without errors", () => {
+  it("Should render AppInfo Component without errors", () => {
     const wrapper = findByTestAttr(component, "appInfoComponent");
     expect(wrapper.length).toBe(1);
   });

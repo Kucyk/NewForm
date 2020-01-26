@@ -4,8 +4,7 @@ import { Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
 import StyledPaper from "../../UI/StyledPaper/StyledPaper";
 
-const Success = ({ firstStep }) => {
-  return (
+const Success = ({ firstStep }) =>(
     <StyledPaper>
       <Typography
         data-test="successComponent"
@@ -17,8 +16,7 @@ const Success = ({ firstStep }) => {
       </Typography>
       <FormButton onClick={firstStep}>Dodaj Kolejną osobę !</FormButton>
     </StyledPaper>
-  );
-};
+  )
 
 Success.propTypes = {
   firstStep: PropTypes.func
