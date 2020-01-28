@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://football-db2fd.firebaseio.com/"
+  baseURL: "https://marcinkucjas.firebaseio.com/"
 });
 
 export default instance;
