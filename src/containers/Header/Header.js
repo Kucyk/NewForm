@@ -36,7 +36,10 @@ const Header = withStyles(styles)(({ classes }) => (
 ));
 
 Header.propTypes = {
-  classes: PropTypes.object
+  classes: PropTypes.shape({
+    toolbar: PropTypes.string,
+    typography: PropTypes.string
+  })
 };
 
 export default Header;

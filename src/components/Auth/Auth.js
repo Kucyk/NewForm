@@ -12,8 +12,6 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
   const [open, setOpen] = useState(false);
   const [isSignIn, setIsSignIn] = useState(true);
 
-  let errorMessage = null;
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token || error) {
@@ -46,38 +44,26 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
     }, 500);
   };
 
-  if (loading) {
-    errorMessage = <CircularProgress />;
-  }
-
-  if (error) {
-    switch (error.message) {
-      case "EMAIL_NOT_FOUND":
-        errorMessage = "NIEPRAWIDŁOWY EMAIL";
-        break;
-      case "EMAIL_EXISTS":
-        errorMessage = "EMAIL ISTNIEJE";
-        break;
-      case "INVALID_PASSWORD":
-        errorMessage = "NIEPRAWIDŁOWE HASŁO";
-        break;
-      case "TOO_MANY_ATTEMPTS_TRY_LATER : Too many unsuccessful login attempts. Please try again later.":
-        errorMessage = "ZBYT DUŻO PRÓB, SPRÓBUJ PÓŹNIEJ";
-        break;
-      default:
-        errorMessage = "COŚ POSZŁO NIE TAK";
-        break;
+  const renderContent = () => {
+    if (loading) {
+      return <CircularProgress />;
+    } else if (error) {
+      switch (error.message) {
+        case "EMAIL_NOT_FOUND":
+          return "NIEPRAWIDŁOWY EMAIL";
+        case "EMAIL_EXISTS":
+          return "EMAIL ISTNIEJE";
+        case "INVALID_PASSWORD":
+          return "NIEPRAWIDŁOWE HASŁO";
+        case "TOO_MANY_ATTEMPTS_TRY_LATER : Too many unsuccessful login attempts. Please try again later.":
+          return "ZBYT DUŻO PRÓB, SPRÓBUJ PÓŹNIEJ";
+        default:
+          return "COŚ POSZŁO NIE TAK";
+      }
+    } else {
+      return null;
     }
-  }
-
-  let form = (
-    <AuthForm
-      handleSubmit={handleSubmit}
-      handleToggle={handleToggle}
-      isSignIn={isSignIn}
-      switchModeHandler={switchModeHandler}
-    />
-  );
+  };
 
   return (
     <Fragment>
@@ -118,8 +104,13 @@ const Auth = ({ onAuth, onLogout, isAuthenticated, error, loading }) => {
           <Tab label="Zarejestruj" />
         </Tabs>
         <DialogTitle>{isSignIn ? "Logowanie" : "Rejestracja"}</DialogTitle>
-        <div>{errorMessage}</div>
-        {form}
+        <div>{renderContent()}</div>
+        <AuthForm
+          handleSubmit={handleSubmit}
+          handleToggle={handleToggle}
+          isSignIn={isSignIn}
+          switchModeHandler={switchModeHandler}
+        />
       </Dialog>
     </Fragment>
   );

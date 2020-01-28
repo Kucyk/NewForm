@@ -62,7 +62,7 @@ const AuthForm = ({ isSignIn, handleSubmit }) => (
 
 AuthForm.propTypes = {
   isSignIn: PropTypes.bool,
-  onAuth: PropTypes.func
+  handleSubmit: PropTypes.func
 };
 
 export default AuthForm;

@@ -23,7 +23,10 @@ describe("Header Component", () => {
 describe("Checking PropTypes", () => {
   it("Should not throw a warning", () => {
     const expectedProps = {
-      classes: {}
+      classes: {
+        toolbar: 'Text 1',
+        typography: 'Text 2'
+      }
     };
     const propsErr = checkProps(Header, expectedProps);
     expect(propsErr).toBeUndefined();

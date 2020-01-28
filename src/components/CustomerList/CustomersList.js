@@ -126,7 +126,7 @@ const CustomersList = ({ rows, handleDelete }) => {
 };
 
 CustomersList.propTypes = {
-  rows: PropTypes.array,
+  rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
   handleDelete: PropTypes.func
 };
 

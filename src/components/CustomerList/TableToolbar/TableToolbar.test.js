@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { findByTestAttr,checkProps } from '../../../Utils/index';
+import { findByTestAttr, checkProps } from "../../../Utils/index";
 import TableToolbar from "./TableToolbar";
 
 const setUp = (props = {}) => {
@@ -8,17 +8,26 @@ const setUp = (props = {}) => {
   return component;
 };
 
-describe('Checking PropTypes',()=>{
-    it('Should not throw a warning',()=>{
-      const expectedProps={
-            rows: [],
-            handleDelete: ()=>{},
-            selectedRows:{}
+describe("Checking PropTypes", () => {
+  it("Should not throw a warning", () => {
+    const expectedProps = {
+      handleDelete: () => {},
+      selectedRows: {
+        lookup: {
+          2: true
+        },
+        data: [
+          {
+            index: 1,
+            dataIndex: 1
+          }
+        ]
       }
-      const propsErr=checkProps(TableToolbar , expectedProps)
-      expect(propsErr).toBeUndefined()
-    })
-  })
+    };
+    const propsErr = checkProps(TableToolbar, expectedProps);
+    expect(propsErr).toBeUndefined();
+  });
+});
 
 describe("TableToolbar Component", () => {
   let component;

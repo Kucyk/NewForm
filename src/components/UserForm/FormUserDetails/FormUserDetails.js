@@ -73,9 +73,27 @@ const FormUserDetails = ({
   )
 
 FormUserDetails.propTypes = {
-  values: PropTypes.object,
-  errors: PropTypes.object,
-  touched: PropTypes.object,
+  values: PropTypes.shape({
+    firstName:PropTypes.string,
+    lastName:PropTypes.string,
+    email:PropTypes.string,
+    city:PropTypes.string,
+    number:PropTypes.string
+  }),
+  errors: PropTypes.shape({
+    firstName:PropTypes.string,
+    lastName:PropTypes.string,
+    email:PropTypes.string,
+    city:PropTypes.string,
+    number:PropTypes.string
+  }),
+  touched: PropTypes.shape({
+    firstName:PropTypes.bool,
+    lastName:PropTypes.bool,
+    email:PropTypes.bool,
+    city:PropTypes.bool,
+    number:PropTypes.bool
+  }),
   handleChange: PropTypes.func,
   handleBlur: PropTypes.func,
   nextStep: PropTypes.func

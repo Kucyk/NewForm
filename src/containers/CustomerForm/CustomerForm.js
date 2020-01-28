@@ -34,7 +34,6 @@ const CustomerForm = ({ loading, error, onPostData }) => {
         setSubmitting(true);
         setTimeout(() => {
           onPostData(values);
-
           setSubmitting(false);
           nextStep();
           resetForm();

@@ -29,19 +29,17 @@ const Footer = ({ history, isAuthenticated }) => {
     }
   ];
 
-  let content = null;
-
-  content = isAuthenticated
-    ? navArray.map(item => (
-        <Tab
-          component={Link}
-          to={item.to}
-          key={item.name}
-          label={item.name}
-          index={item.index}
-        />
-      ))
-    : null;
+  const renderContent=()=>{
+    return isAuthenticated && navArray.map(item => (
+      <Tab
+        component={Link}
+        to={item.to}
+        key={item.name}
+        label={item.name}
+        index={item.index}
+      />
+    ))
+  }
 
   return (
     <AppBar position="static">
@@ -52,7 +50,7 @@ const Footer = ({ history, isAuthenticated }) => {
         centered
         scrollButtons="on"
       >
-        {content}
+        {renderContent()}
       </Tabs>
     </AppBar>
   );

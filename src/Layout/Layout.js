@@ -31,16 +31,16 @@ const styles = theme => ({
 });
 
 const Layout = ({ children, classes }) => (
-    <Fragment>
-      <CssBaseline />
-      <Header />
-      <Grid container className={classes.container}>
-        <Grid item xs>
-          <Paper className={classes.paper}>{children}</Paper>
-        </Grid>
+  <Fragment>
+    <CssBaseline />
+    <Header />
+    <Grid container className={classes.container}>
+      <Grid item xs>
+        <Paper className={classes.paper}>{children}</Paper>
       </Grid>
-      <Footer />
-    </Fragment>
-  );
+    </Grid>
+    <Footer />
+  </Fragment>
+);
 
 export default withStyles(styles)(Layout);

@@ -15,9 +15,18 @@ const TableToolbar = ({ selectedRows, handleClick }) => (
 );
 
 TableToolbar.propTypes = {
-  rows: PropTypes.array,
-  handleDelete: PropTypes.func,
-  selectedRows: PropTypes.object
+  handleClick: PropTypes.func,
+  selectedRows: PropTypes.shape({
+    lookup: PropTypes.shape({
+      2: PropTypes.bool
+    }),
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        index: PropTypes.number,
+        dataIndex: PropTypes.number
+      })
+    )
+  })
 };
 
 export default TableToolbar;
